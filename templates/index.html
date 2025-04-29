@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Chatbot</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="static/css/style.css"/>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto my-10 p-6 bg-white shadow-md rounded-lg">
-        <h2 class="text-2xl font-bold mb-4">Gemini Chatbot</h2>
-        <div id="chat-box" class="border p-4 mb-4 h-60 overflow-auto bg-gray-50"></div>
-        
-        <!-- Input and Buttons -->
-        <div>
-            <input type="text" id="title-input" placeholder="Enter conversation title" class="border p-2 rounded mb-2 w-full" />
-            <button onclick="saveTitle()" class="bg-blue-500 text-white p-2 rounded mb-4">Save Title</button>
-        </div>
-        
-        <button onclick="clearConversation()" class="bg-red-500 text-white p-2 rounded">Clear Conversation</button>
-    </div>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h2>History</h2>
+      <ul id="history"></ul>
+    </aside>
 
-    <script src="static/js/chat.js"></script>
+    <main id="main">
+      <header>
+        <h1>ChatBot</h1>
+        <div id="header-buttons">
+          <button onclick="toggleDarkMode()">🌗</button>
+          <button onclick="startVoiceInput()">🎤</button>
+        </div>
+      </header>
+
+      <section id="chat-box"></section>
+
+      <form id="chat-form" onsubmit="event.preventDefault(); sendMessage();">
+        <textarea id="user-input" placeholder="Type a message..." rows="1"></textarea>
+        <button type="submit">➤</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="static/js/script.js"></script>
 </body>
 </html>

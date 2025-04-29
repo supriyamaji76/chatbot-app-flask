@@ -1,5 +1,5 @@
 # Use the official Python image from Docker Hub
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -19,7 +19,7 @@ EXPOSE 5000
 # Set environment variables
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_RUN_PORT=5000
+ENV FLASK_RUN_PORT=5001
 
 # Run the Flask app
 CMD ["flask", "run"]
